@@ -1,4 +1,7 @@
+import array
+import threading
 N = 12
+thread_count=2
 print(((N-1)%12)-1)
 #Вариан 10
 #Номер 1
@@ -34,14 +37,32 @@ if res != -1 :
 else:
     print("подходящие цифры отсутсвуют")
 #Задание 3
-def ND(x): #Наименьший делитель не равный 1
-    min = -1
-    val = x-1
-    while val > 1 :
-        if( x % val == 0):
+cesh_nd=[0,1]
+def ND_thread(i,x):
+    val=i+2
+    min=-1
+    while val<x:
+         if( x % val == 0):
             min = val
-        val=val-1
-    return min
+            break
+         val=val+1
+    global  cesh_nd
+    cesh_nd[i]=min
+def ND(x): #Наименьший делитель не равный 1
+    #min = -1
+    #val = x-1
+    #while val > 1 :
+       
+        #val=val-1
+    th1=threading.Thread(target=ND_thread,args=(0,x))
+    th1.start()
+    th2=threading.Thread(target=ND_thread,args=(1,x))
+    th2.start()
+    th1.join()
+    th2.join()
+    if (cesh_nd[0] < cesh_nd[1]) and (cesh_nd[0]>0) :
+        return cesh_nd[0]
+    return cesh_nd[1]
 def ChifSum(x): #Сумма цифр < 5
     sum =0
     tmp=x
@@ -50,17 +71,44 @@ def ChifSum(x): #Сумма цифр < 5
             sum = sum + (tmp % 10)
         tmp=int(tmp/10)
     return sum
+
+cesh_th=[0,1]
+def Proizv_thread(id,value,nd):
+    i=value-id-1
+    global cesh_th
+    cesh_th[id]=-1
+    while i>1:
+        if (i % nd !=0) or (nd % i !=0):
+           cesh_th[id]=i
+           break
+        i=i-thread_count
+    
+
 def Proizv(x):
     #ran1=range(1,x)
+   
     max = -1
+    
     nd= ND(x)
-
-    i=1
-    while i<x:
-        if (i % nd !=0) or (nd % i !=0):
-            max=i
-        i=i+1 
-    return max *ChifSum(x)
+    th1=threading.Thread(target=Proizv_thread,args=(0,x,nd))
+    th1.start()
+    th2=threading.Thread(target=Proizv_thread,args=(1,x,nd))
+    th2.start()
+   
+    
+    #i=1
+    #while i<x:
+    #    
+    #    i=i+1 
+    sum=ChifSum(x)
+    th1.join()
+    th2.join()
+    global cesh_th
+    if cesh_th[0]>cesh_th[1]:
+        res=cesh_th[0]
+    else :
+        res=cesh_th[1]
+    return res*sum
 val=int(input())
 r=Proizv(val)
 if r <0 :
