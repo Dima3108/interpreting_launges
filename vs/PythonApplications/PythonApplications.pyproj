@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>7e944e36-e9ff-47bf-b47b-2eac02d35c46</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Lab1.py</StartupFile>
+    <StartupFile>Lab1_task2.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -24,6 +24,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Lab1.py" />
+    <Compile Include="Lab1_task2.py" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|PythonCore|3.10" />
