@@ -29,6 +29,17 @@
   <ItemGroup>
     <InterpreterReference Include="Global|PythonCore|3.10" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="ForPython.deps.json">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="ForPython.dll">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="ForPython.pdb">
+      <Publish>True</Publish>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
        Visual Studio and specify your pre- and post-build commands in

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "E4GZcASJeWucrQ/xhd44Y6Gzj9j92pcfDqsiWX9nZIHOeft93Ls3I+dqUgjO1ndpzFQLAIYFN0BNCLZjjIVQLQ==",
+  "success": true,
+  "projectFilePath": "Q:\\GITHub\\interpreting_launges\\vs\\ForPython\\ForPython.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Дмитрий\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Дмитрий\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

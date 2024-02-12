@@ -1,15 +1,28 @@
+# coding=Latin-1
+#https://habr.com/ru/articles/556230/
 #¬ариант 10
-
 import array
-from locale import setlocale
-setlocale("Rus")
+import locale,pprint,time,os
+from xml.etree.ElementTree import tostring
+import clr
+pathDLL = os.getcwd() + "\\ForPython.dll"
+clr.AddReference(pathDLL)
+import ForPython
+from ForPython import HelpFunctions
+locale.setlocale(locale.LC_ALL, 'ru_RU.UTF-8')
+#print(locale.getlocale(),"\n")
+s="###"
+HelpFunctions.CPrint(s)
 atasks_=[4,11,15]
 def task_manager_get_task():
-    print("¬ыберите задачу, которую хотите решить\n")
+   # print("¬ыберите задачу, которую хотите решить\n")
+    HelpFunctions.CPrint("¬ыберите задачу, которую хотите решить\n")
     global atasks_
     i=0
-    while(i<atasks_.count()):
-        print("у задачи ",atasks_[i]," код равен",i,"\n")
+    while(i<atasks_.__len__()):
+        #print("у задачи ",atasks_[i]," код равен",i,"\n")
+        sar=["у задачи ",atasks_[i]," код равен",i,"\n"]
+        HelpFunctions.CPrintArray(sar)
         i=i+1
     numt=-1
     while(numt<0 or numt>=atasks_.count()):
