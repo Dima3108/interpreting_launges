@@ -5,7 +5,7 @@ import array
 import locale,pprint,time,os
 from xml.etree.ElementTree import tostring
 import clr
-pathDLL = os.getcwd() + "\\ForPython.dll"
+pathDLL = os.getcwd() + "\\Debug\\netstandard2.0\\ForPython.dll"
 clr.AddReference(pathDLL)
 import ForPython
 from ForPython import HelpFunctions
@@ -16,17 +16,21 @@ HelpFunctions.CPrint(s)
 atasks_=[4,11,15]
 def task_manager_get_task():
    # print("¬ыберите задачу, которую хотите решить\n")
-    HelpFunctions.CPrint("¬ыберите задачу, которую хотите решить\n")
+    HelpFunctions.CPrintRusWord(int(0))
     global atasks_
     i=0
     while(i<atasks_.__len__()):
         #print("у задачи ",atasks_[i]," код равен",i,"\n")
-        sar=["у задачи ",atasks_[i]," код равен",i,"\n"]
-        HelpFunctions.CPrintArray(sar)
+        #sar=["у задачи ",atasks_[i]," код равен",i,"\n"]
+        HelpFunctions.CPrintRusWord(int(1))
+        HelpFunctions.CPrint(str(atasks_[i]))
+        HelpFunctions.CPrintRusWord(int(2))
+        HelpFunctions.CPrint(str(i))
         i=i+1
     numt=-1
     while(numt<0 or numt>=atasks_.count()):
-          print("¬ведите код задачи")
+          #print("¬ведите код задачи")
+          HelpFunctions.CPrintRusWord(int(3))
           numt=int(input())
     return atasks_[numt]
 _task=task_manager_get_task()
