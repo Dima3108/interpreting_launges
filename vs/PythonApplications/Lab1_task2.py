@@ -13,10 +13,12 @@ locale.setlocale(locale.LC_ALL, 'ru_RU.UTF-8')
 #print(locale.getlocale(),"\n")
 s="###"
 HelpFunctions.CPrint(s)
+HelpFunctions.CPrint("\n")
 atasks_=[4,11,15]
 def task_manager_get_task():
    # print("Выберите задачу, которую хотите решить\n")
     HelpFunctions.CPrintRusWord(int(0))
+    HelpFunctions.CPrint("\n")
     global atasks_
     i=0
     while(i<atasks_.__len__()):
@@ -26,12 +28,14 @@ def task_manager_get_task():
         HelpFunctions.CPrint(str(atasks_[i]))
         HelpFunctions.CPrintRusWord(int(2))
         HelpFunctions.CPrint(str(i))
+        HelpFunctions.CPrint("\n")
         i=i+1
     numt=-1
-    while(numt<0 or numt>=atasks_.count()):
+    while(numt<0 or numt>=atasks_.__len__()):
           #print("Введите код задачи")
           HelpFunctions.CPrintRusWord(int(3))
-          numt=int(input())
+          HelpFunctions.CPrint("\n")
+          numt=HelpFunctions.CGetInt()
     return atasks_[numt]
 _task=task_manager_get_task()
 

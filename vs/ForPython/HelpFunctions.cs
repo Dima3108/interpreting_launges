@@ -20,5 +20,7 @@ namespace ForPython
             }
             Console.WriteLine();
         }
+        public static int CGetInt()=>Convert.ToInt32(Console.ReadLine());
+        public static string GGetString()=>Console.ReadLine();
     }
 }
