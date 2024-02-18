@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ForPython")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7f10e1220a51272184c65f2d2e674cda2e461f95")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f045ba8250d9bde4ac6a6f2c6c1bcf9996763fe")]
 [assembly: System.Reflection.AssemblyProductAttribute("ForPython")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ForPython")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
