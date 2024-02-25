@@ -9,7 +9,7 @@ from xml.etree.ElementTree import tostring
 import clr
 pathDLL = os.getcwd() + "\\Debug\\netstandard2.0\\ForPython.dll"
 clr.AddReference(pathDLL)
-import ForPython
+#import ForPython
 from ForPython import HelpFunctions
 locale.setlocale(locale.LC_ALL, 'ru_RU.UTF-8')
 #print(locale.getlocale(),"\n")

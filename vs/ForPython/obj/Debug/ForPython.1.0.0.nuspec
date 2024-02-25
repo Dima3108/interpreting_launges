@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>ForPython</id>
+    <version>1.0.0</version>
+    <authors>ForPython</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="c3e1f649ed0f07629e8dc5befc77a6530b227af3" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="Q:\GITHub\interpreting_launges\vs\PythonApplications\Debug\netstandard2.0\ForPython.dll" target="lib\netstandard2.0\ForPython.dll" />
+  </files>
+</package>
