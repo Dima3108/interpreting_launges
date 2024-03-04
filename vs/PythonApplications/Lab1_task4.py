@@ -42,3 +42,22 @@ def task_1(str):
 #встречаемости самого часто встречаемого в строке символа от частоты его
 #встречаемости в текстах на этом алфавите.
 def task_5(str):
+   if(len(str)<=0):
+      return ""
+   char_table=[str[0]]
+   i=1
+   while(i<len(str)):
+       j=0
+       stat=-1
+       while(j<len(char_table)):
+            if(char_table[j]==str[i]):
+                 stat=1
+                 break
+            j=j+1
+       if(stat==-1):
+           char_table.append(str[i])
+       i=i+1
+   j=0
+   while(j<len(char_table)):
+        count
+        j=j+1
