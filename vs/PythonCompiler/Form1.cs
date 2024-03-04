@@ -11,6 +11,7 @@ namespace PythonCompiler
     using Microsoft.Scripting.Hosting.Providers;
     using Microsoft.Scripting.Runtime;
     using Microsoft.Scripting;
+   // using Python.Runtime;//https://www.codeproject.com/Questions/5362420/Running-Python-script-in-Csharp-without-installing
     public class Result : ErrorSink
     {
         public override void Add(SourceUnit source, string message, SourceSpan span, int errorCode, Severity severity)
@@ -51,27 +52,27 @@ namespace PythonCompiler
         {
             if(File.Exists(textBox1.Text))
             {
-                
-               
-              
                 try
                 {
                     var engine = Python.CreateEngine();
 
                     var fileName = textBox1.Text;
                     var source = engine.CreateScriptSourceFromString(File.ReadAllText(fileName), fileName, SourceCodeKind.File);
-
-                    var sourceUnit = HostingHelpers.GetSourceUnit(source);
+                    var comp_=source.Compile();
+                    comp_.Execute();    
+                   /* var sourceUnit = HostingHelpers.GetSourceUnit(source);
 
                     var result = new Result();
                     var context = new CompilerContext(sourceUnit, new PythonCompilerOptions(), result);
                     var parser = Parser.CreateParser(context, new PythonOptions());
-                    parser.ParseFile(false);
+                    parser.ParseFile(false);*/
 
                 }
                 catch (Exception error)
                 {
                     Console.WriteLine(error.Message);
+                    Console.WriteLine(error.StackTrace);
+                    Console.WriteLine(error.Source);
                 }
                 Console.WriteLine($"скрипт {openFileDialog1.SafeFileName} завершил свою работу!");
 

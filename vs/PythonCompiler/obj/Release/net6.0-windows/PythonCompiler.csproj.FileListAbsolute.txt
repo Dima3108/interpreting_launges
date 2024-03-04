@@ -683,3 +683,4 @@ Q:\GITHub\interpreting_launges\vs\PythonCompiler\bin\Release\net6.0-windows\lib\
 Q:\GITHub\interpreting_launges\vs\PythonCompiler\bin\Release\net6.0-windows\lib\xmlrpc\server.py
 Q:\GITHub\interpreting_launges\vs\PythonCompiler\bin\Release\net6.0-windows\lib\zipfile.py
 Q:\GITHub\interpreting_launges\vs\PythonCompiler\obj\Release\net6.0-windows\PythonCompiler.Result.resources
+Q:\GITHub\interpreting_launges\vs\PythonCompiler\bin\Release\net6.0-windows\Python.Runtime.dll
