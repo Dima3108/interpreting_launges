@@ -130,6 +130,61 @@ def task_5(str):
        deltas.pop(i)
        l=l+1
    return new_str   
+'''
+ public static string[] task_10(string[] array)
+ {
+     int[]count=new int[array.Length];
+     for(int i = 0; i < array.Length; i++)
+     {
+         count[i] = 0;
+         for(int j = 0; j < array[i].Length - 2; j++)
+         {
+             if (array[i][j] == array[i][j + 2])
+                 count[i]++;
+         }
+     }
+     string[]s2=new string[count.Length];    
+     for(int i=0;i<count.Length;i++)
+     {
+         s2[i] = array[i];
+     }
+     for(int i = 0; i < s2.Length; i++)
+     {
+         var tmp_del = count[i];
+         for(int j = i + 1; j < s2.Length; j++)
+         {
+             if (tmp_del > count[j])
+             {
+                 count[i] = count[j];
+                 count[j] = tmp_del;
+                 tmp_del = count[i];
+                 var tmp_val = s2[i];
+                 s2[i] = s2[j];
+                 s2[j] = tmp_val;
+             }
+         }
+     }
+     return s2;  
+ }
+'''
+def task_10(array):
+    count = [0] * len(array)
+    for i in range(len(array)):
+        count[i] = 0
+        for j in range(len(array[i]) - 2):
+            if array[i][j] == array[i][j + 2]:
+                count[i] += 1
+    s2 = array.copy()
+    for i in range(len(s2)):
+        tmp_del = count[i]
+        for j in range(i + 1, len(s2)):
+            if tmp_del > count[j]:
+                count[i], count[j] = count[j], tmp_del
+                tmp_del = count[i]
+                tmp_val = s2[i]
+                s2[i] = s2[j]
+                s2[j] = tmp_val
+    return s2
 
    
    
