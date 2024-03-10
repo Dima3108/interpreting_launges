@@ -185,6 +185,92 @@ def task_10(array):
                 s2[i] = s2[j]
                 s2[j] = tmp_val
     return s2
+'''
+/*В порядке увеличения квадратичного отклонения между наибольшим 
+  ASCII-кодом символа строки и разницы в ASCII-кодах пар зеркально 
+  расположенных символов строки (относительно ее середины)*/
+public static string[] task_9(string[] array)
+{
+    var delt=new double[array.Length];
+    for(int i = 0; i < array.Length; i++)
+    {
+        string s = array[i];
+        char c = s[0];//максимальный символ
+        for (int j = 0; j < s.Length; j++)
+            if (c < s[j])
+                c = s[j];
+        int ser1 = s.Length / 2;
+        int ser2 = ser1;
+        if(s.Length % 2 == 0)
+        {
+            ser2 = ser1 - 1;
+        }
+        int delta = s[ser2] - s[ser1];
+        while (ser2 >= 0 && ser1 < s.Length)
+        {
+            delta += s[ser2] - s[ser1];
+            ser2--;
+            ser1++;
+        }
+        int max_ch = c;
+        delt[i]=(double)((delta-max_ch)*(delta-max_ch));
+    }
+    string[]s2=new string[array.Length];    
+    for(int k=0;k< array.Length;k++)
+        s2[k] = array[k];
+    for(int i = 0; i < array.Length; i++)
+    {
+        double tmpd = delt[i];
+        string tmpv = "";
+        for(int j = i + 1; j < array.Length; j++)
+        {
+            if (tmpd > delt[j])
+            {
+                delt[i] = delt[j];
+                delt[j] = tmpd;
+                tmpd = delt[i];
+                tmpv = s2[i];
+                s2[i] = s2[j];
+                s2[j] = tmpv;
+            }
+        }
+    }
+    return s2;
+}
+'''
+def task_9(array):
+    delt = [0] * len(array)
+    for i in range(len(array)):
+        s = array[i]
+        c = s[0]  # максимальный символ
+        for j in range(len(s)):
+            if c < s[j]:
+                c = s[j]
+        ser1 = len(s) // 2
+        ser2 = ser1
+        if len(s) % 2 == 0:
+            ser2 = ser1 - 1
+        delta = ord(s[ser2]) - ord(s[ser1])
+        while ser2 >= 0 and ser1 < len(s):
+            delta += ord(s[ser2]) - ord(s[ser1])
+            ser2 -= 1
+            ser1 += 1
+        max_ch = ord(c)
+        delt[i] = (delta - max_ch) ** 2
+    s2 = array.copy()
+    for k in range(len(array)):
+        s2[k] = array[k]
+    for i in range(len(array)):
+        tmpd = delt[i]
+        tmpv = ""
+        for j in range(i + 1, len(array)):
+            if tmpd > delt[j]:
+                delt[i], delt[j] = delt[j], tmpd
+                tmpd = delt[i]
+                tmpv = s2[i]
+                s2[i] = s2[j]
+                s2[j] = tmpv
+    return s2
 
    
    

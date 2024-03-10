@@ -9,8 +9,10 @@ namespace Lab1
         {
             string[] a = {"aaa22345!`sdEEE",
                            "1234567890",
-                           "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq"};
-            string[] b = Lab1_task4.task_10(a);
+                           "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq",
+                            "qqqqqqqqqqqq",
+                             "rrrrrrrrQQwww44$$2"};
+            string[] b = Lab1_task4.task_9(a);
             foreach (string s in b)
             {
                 Console.WriteLine(s);
