@@ -6,38 +6,47 @@
 import array
 import locale,pprint,time,os
 from xml.etree.ElementTree import tostring
-import clr
-pathDLL = os.getcwd() + "\\Debug\\netstandard2.0\\ForPython.dll"
-clr.AddReference(pathDLL)
+#import clr
+#pathDLL = os.getcwd() + "\\Debug\\netstandard2.0\\ForPython.dll"
+#clr.AddReference(pathDLL)
 #import ForPython
 from ForPython import HelpFunctions
 locale.setlocale(locale.LC_ALL, 'ru_RU.UTF-8')
 #print(locale.getlocale(),"\n")
-s="###"
+'''s="###"
 HelpFunctions.CPrint(s)
-HelpFunctions.CPrint("\n")
+HelpFunctions.CPrint("\n")'''
 atasks_=[4,11,15]
 def task_manager_get_task():
    # print("Выберите задачу, которую хотите решить\n")
-    HelpFunctions.CPrintRusWord(int(0))
-    HelpFunctions.CPrint("\n")
+    #HelpFunctions.CPrintRusWord(int(0))
+    print("Выберите задачу, которую хотите решить\n")
+    #HelpFunctions.CPrint("\n")
+    print("\n")
     global atasks_
     i=0
     while(i<atasks_.__len__()):
         #print("у задачи ",atasks_[i]," код равен",i,"\n")
         #sar=["у задачи ",atasks_[i]," код равен",i,"\n"]
-        HelpFunctions.CPrintRusWord(int(1))
-        HelpFunctions.CPrint(str(atasks_[i]))
-        HelpFunctions.CPrintRusWord(int(2))
-        HelpFunctions.CPrint(str(i))
-        HelpFunctions.CPrint("\n")
+        #HelpFunctions.CPrintRusWord(int(1))
+        print("у задачи")
+        #HelpFunctions.CPrint(str(atasks_[i]))
+        print(atasks_[i])
+        #HelpFunctions.CPrintRusWord(int(2))
+        print(" код равен")
+        #HelpFunctions.CPrint(str(i))
+        print(str(i))
+        #HelpFunctions.CPrint("\n")
+        print("\n")
         i=i+1
     numt=-1
     while(numt<0 or numt>=atasks_.__len__()):
           #print("Введите код задачи")
-          HelpFunctions.CPrintRusWord(int(3))
-          HelpFunctions.CPrint("\n")
-          numt=HelpFunctions.CGetInt()
+         # HelpFunctions.CPrintRusWord(int(3))
+         print("Введите код задачи\n")
+         # HelpFunctions.CPrint("\n")
+          #numt=HelpFunctions.CGetInt()
+          numt=int(input())
     return atasks_[numt]
 def task_4(s):
     _len=len(s)
@@ -49,7 +58,9 @@ def task_4(s):
     return True 
 def task_11(s):
     count_=s.split(" ").__len__()
-    HelpFunctions.CPrint(count_)
+    #HelpFunctions.CPrint(count_)
+    print(count_)
+    print("\n")
 def task_15(s):
     count_=0
     i=0
@@ -68,19 +79,30 @@ def task_15(s):
     return count_
 _task=task_manager_get_task()
 if(_task==4):
-   HelpFunctions.CPrintRusWord(int(4))
-   _str=str(HelpFunctions.GGetString())
+   #HelpFunctions.CPrintRusWord(int(4))
+   print("Введите строку для проверки на полиндром\n")
+   #_str=str(HelpFunctions.GGetString())
+   _str=str(input())
    _stat=task_4(_str)
    if(_stat==True):
-       HelpFunctions.CPrintRusWord(int(5))
+       #HelpFunctions.CPrintRusWord(int(5))
+       print("Строка является полиндромом")
    else:
-       HelpFunctions.CPrintRusWord(int(6))
+       #HelpFunctions.CPrintRusWord(int(6))
+       print("Строка не является полиндромом")
 elif (_task==11):
-     HelpFunctions.CPrintRusWord(int(7))
-     _str=str(HelpFunctions.GGetString())
+     #HelpFunctions.CPrintRusWord(int(7))
+     print("Введите слова через пробел\n")
+     #_str=str(HelpFunctions.GGetString())
+     _str=str(input())
      _stat=task_11(_str)
 else:
-    HelpFunctions.CPrintRusWord(int(8))
-    _count= task_15(str(HelpFunctions.CGetInt()))
-    HelpFunctions.CPrint(int(_count))
+    #HelpFunctions.CPrintRusWord(int(8))
+    print("Введите натуральное число для" +
+                                                   " подсчета различных цифр" +
+                                                   " в его десятичной записи\n" )
+    #_count= task_15(str(HelpFunctions.CGetInt()))
+    _count=task_15(str(input()))
+    #HelpFunctions.CPrint(int(_count))
+    print(_count)
 HelpFunctions.Exit()  
