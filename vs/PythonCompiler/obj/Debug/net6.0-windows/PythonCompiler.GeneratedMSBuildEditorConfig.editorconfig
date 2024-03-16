@@ -14,6 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PythonCompiler
-build_property.ProjectDir = Q:\GITHub\interpreting_launges\vs\PythonCompiler\
+build_property.ProjectDir = q:\GITHub\interpreting_launges\vs\PythonCompiler\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
