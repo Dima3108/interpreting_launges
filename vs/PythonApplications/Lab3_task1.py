@@ -51,8 +51,8 @@ class Triangle:
      return False  
    def move(self,gradus,point_O):
       R1=math.sqrt(pow(self.point1.x-point_O.x,2)+pow(self.point1.y-point_O.y,2))
-      R2=math.sqrt(pow(self.point2.x-point_O,2)+pow(self.point2.y-point_O.y,2))
-      R3=math.sqrt(pow(pow(self.point1.x-point_O.x,2)+pow(self.point1.y-point_O.y,2)))
+      R2=math.sqrt(pow(self.point2.x-point_O.x,2)+pow(self.point2.y-point_O.y,2))
+      R3=math.sqrt(pow(self.point1.x-point_O.x,2)+pow(self.point1.y-point_O.y,2))
       a=float(float((math.pi*gradus))/float(180.0))
       cos_a=math.cos(a)
       sin_a=math.sin(a)
@@ -62,3 +62,8 @@ class Triangle:
       self.point2.y=R2*sin_a+self.point2.y
       self.point3.x=R3*cos_a+self.point3.x
       self.point3.y=R3*sin_a+self.point3.y
+   def toString(self):
+      return "point1:"+str(self.point1.x)+","+str(self.point1.y)+"\n"+"point2:"+str(self.point2.x)+","+str(self.point2.y)+"\n"+"point3:"+str(self.point3.x)+","+str(self.point3.y)+"\n"
+trin=Triangle(Point2D(2,3),Point2D(4,3),Point2D(3,7))
+trin.move(120,Point2D(1,1))
+print(trin.toString())
