@@ -1,4 +1,10 @@
 #https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D1%80%D0%B5%D1%81%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D1%8F%D0%BC%D1%8B%D1%85
+#https://programmersforum.ru/showthread.php?t=47317
+'''
+x1'=Rcos(a) + x0;
+y1'=Rsin(a)+y0;
+'''
+import math
 class Point2D:
    def __init__(self,x,y):
      self.x=float(x)
@@ -43,3 +49,16 @@ class Triangle:
            j=j+1
         i=i+1
      return False  
+   def move(self,gradus,point_O):
+      R1=math.sqrt(pow(self.point1.x-point_O.x,2)+pow(self.point1.y-point_O.y,2))
+      R2=math.sqrt(pow(self.point2.x-point_O,2)+pow(self.point2.y-point_O.y,2))
+      R3=math.sqrt(pow(pow(self.point1.x-point_O.x,2)+pow(self.point1.y-point_O.y,2)))
+      a=float(float((math.pi*gradus))/float(180.0))
+      cos_a=math.cos(a)
+      sin_a=math.sin(a)
+      self.point1.x=R1*cos_a+self.point1.x
+      self.point1.y=R1*sin_a+self.point1.y
+      self.point2.x=R2*cos_a+self.point2.x
+      self.point2.y=R2*sin_a+self.point2.y
+      self.point3.x=R3*cos_a+self.point3.x
+      self.point3.y=R3*sin_a+self.point3.y
