@@ -65,8 +65,19 @@ class Triangle:
    def toString(self):
       return "point1:"+str(self.point1.x)+","+str(self.point1.y)+"\n"+"point2:"+str(self.point2.x)+","+str(self.point2.y)+"\n"+"point3:"+str(self.point3.x)+","+str(self.point3.y)+"\n"
 class Pentagon:
+   
    def __init__(self,point1,point2,point3,point4,point5):
       self.points=[point1,point2,point3,point4,point5]
+      i=0
+      while(i<len(self.points)):
+         j=0
+         while(j<len(self.points)):
+            if(i!=j):
+               if(self.points[i].equal_points(self.points[j]) ):
+                  raise Exception("Не замкнутая фигура!")
+            j=j+1
+         i=i+1
+
    def move(self,gradus,point_O):
       a=float(float((math.pi*gradus))/float(180.0))
       cos_a=math.cos(a)
@@ -79,6 +90,31 @@ class Pentagon:
          self.points[i].x=R_[i]*cos_a+self.points[i].x
          self.points[i].y=R_[i]*sin_a+self.points[i].y
          i=i+1
+   def toString(self):
+      s=""
+      i=0
+      while(i<len(self.points)):
+         s=s+"точка "+str(i+1)+" имеет координаты (x,y):"+str(self.points[i].x)+","+str(self.points[i].y)+"\n"
+         i=i+1
+      return s
 trin=Triangle(Point2D(2,3),Point2D(4,3),Point2D(3,7))
 trin.move(120,Point2D(1,1))
 print(trin.toString())
+try:
+   i=0
+   _points_=[]
+   while(i<5):
+      print("Введите координаты"+str(i+1)+" точки\n")
+      x=float(input("Введите x\n"))
+      y=float(input("Введите y\n"))
+      _points_.append(Point2D(x,y))
+      i=i+1
+   pent=Pentagon(_points_[0],_points_[1],_points_[2],_points_[3],_points_[4])
+   grad=float(input("Введите угол поворота в градусах\n"))
+   print("Введите координаты радиусточки\n")
+   x=float(input("Введите x\n"))
+   y=float(input("Введите y\n"))
+   pent.move(grad,Point2D(x,y))
+   print(pent.toString())
+except Exception as e:
+   print(e)
