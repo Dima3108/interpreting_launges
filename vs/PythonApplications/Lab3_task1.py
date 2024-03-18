@@ -64,6 +64,21 @@ class Triangle:
       self.point3.y=R3*sin_a+self.point3.y
    def toString(self):
       return "point1:"+str(self.point1.x)+","+str(self.point1.y)+"\n"+"point2:"+str(self.point2.x)+","+str(self.point2.y)+"\n"+"point3:"+str(self.point3.x)+","+str(self.point3.y)+"\n"
+class Pentagon:
+   def __init__(self,point1,point2,point3,point4,point5):
+      self.points=[point1,point2,point3,point4,point5]
+   def move(self,gradus,point_O):
+      a=float(float((math.pi*gradus))/float(180.0))
+      cos_a=math.cos(a)
+      sin_a=math.sin(a)
+      R_=[]
+      for el in self.points:
+         R_.append(math.sqrt(pow(el.x-point_O.x,2)+pow(el.y-point_O.y,2)))
+      i=0
+      while(i<len(self.points)):
+         self.points[i].x=R_[i]*cos_a+self.points[i].x
+         self.points[i].y=R_[i]*sin_a+self.points[i].y
+         i=i+1
 trin=Triangle(Point2D(2,3),Point2D(4,3),Point2D(3,7))
 trin.move(120,Point2D(1,1))
 print(trin.toString())
