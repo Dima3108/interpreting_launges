@@ -7,16 +7,20 @@ namespace Lab1
     {
         static void Main(string[] args)
         {
-            string[] a = {"aaa22345!`sdEEE",
-                           "1234567890",
-                           "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq",
-                            "qqqqqqqqqqqq",
-                             "rrrrrrrrQQwww44$$2"};
-            string[] b = Lab1_task4.task_9(a);
-            foreach (string s in b)
+            string[] lines = File.ReadAllLines("27-99a.txt");
+            int[]val=new int[lines.Length-1];
+            for(int i=0;i<val.Length;i++)
             {
-                Console.WriteLine(s);
+                val[i] = int.Parse(lines[i+1]);
             }
+            Console.WriteLine(Lab4_task1.GetIndex(val));
+            lines = File.ReadAllLines("27-99b.txt");
+            val = new int[lines.Length - 1];
+            for (int i = 0; i < val.Length; i++)
+            {
+                val[i] = int.Parse(lines[i + 1]);
+            }
+            Console.WriteLine(Lab4_task1.GetIndex(val));
         }
     }
 }
