@@ -15,3 +15,4 @@ Q:\GITHub\interpreting_launges\vs\CSharpCompiler\Lab1\obj\Debug\net6.0\Lab1.genr
 Q:\GITHub\interpreting_launges\vs\CSharpCompiler\Lab1\obj\Debug\net6.0\ref\Lab1.dll
 Q:\GITHub\interpreting_launges\vs\CSharpCompiler\Lab1\bin\Debug\net6.0\27-99a.txt
 Q:\GITHub\interpreting_launges\vs\CSharpCompiler\Lab1\bin\Debug\net6.0\27-99b.txt
+Q:\GITHub\interpreting_launges\vs\CSharpCompiler\Lab1\bin\Debug\net6.0\ОжеговСИ.txt

@@ -7,20 +7,14 @@ namespace Lab1
     {
         static void Main(string[] args)
         {
-            string[] lines = File.ReadAllLines("27-99a.txt");
-            int[]val=new int[lines.Length-1];
-            for(int i=0;i<val.Length;i++)
+            string inp_w = File.ReadAllText("ОжеговСИ.txt");
+            char letter = (Console.ReadLine())[0];
+            var res = Lab4_task2.TextScanner(inp_w, letter);
+            foreach (var line in res)
             {
-                val[i] = int.Parse(lines[i+1]);
+                Console.WriteLine(line);
             }
-            Console.WriteLine(Lab4_task1.GetIndex(val));
-            lines = File.ReadAllLines("27-99b.txt");
-            val = new int[lines.Length - 1];
-            for (int i = 0; i < val.Length; i++)
-            {
-                val[i] = int.Parse(lines[i + 1]);
-            }
-            Console.WriteLine(Lab4_task1.GetIndex(val));
+            Console.WriteLine(res.Length);
         }
     }
 }
