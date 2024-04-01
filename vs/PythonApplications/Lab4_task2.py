@@ -1,13 +1,15 @@
+import re
 def TextScanner(words, letter):
     result = []
     let_ = letter.lower()[0]
-    for word in words.split():
+    for word in re.split('[\s,.!-?;:\n\t]+',words):
+    #words.split(r'\,\.\!'):
         if word is not None and len(word) > 0:
             if word.lower()[0] == let_:
                 result.append(word)
     return result
 
-with open("ОжеговСИ.txt", "r") as file:
+with open("ОжеговСИ.txt", "r", encoding="utf-16" ) as file:
     inp_w = file.read()
 
 letter = input()
