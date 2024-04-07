@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #1,5,9,10
 tableg = "aeiuoаюэуеыояи"
 tablesg = "qwrtpsdfghjklzxcvbnmйцкнгшщзхъфвпрлджэчсмтьб"
@@ -271,6 +272,56 @@ def task_9(array):
                 s2[i] = s2[j]
                 s2[j] = tmpv
     return s2
+atasks_=[1,5,9,10]
+def task_manager_get_task():
+   # print("�������� ������, ������� ������ ������\n")
+    #HelpFunctions.CPrintRusWord(int(0))
+    #HelpFunctions.CPrint("\n")
+    print("Выберите задачу, которую хотите решить\n")
+    global atasks_
+    i=0
+    while(i<atasks_.__len__()):
+        #print("� ������ ",atasks_[i]," ��� �����",i,"\n")
+        #sar=["� ������ ",atasks_[i]," ��� �����",i,"\n"]
+        #HelpFunctions.CPrintRusWord(int(1))
+        print("у задачи ")
+        #HelpFunctions.CPrint(str(atasks_[i]))
+        print(atasks_[i])
+        #HelpFunctions.CPrintRusWord(int(2))
+        print(" код равен")
+        #HelpFunctions.CPrint(str(i))
+        #HelpFunctions.CPrint("\n")
+        print(i)
+        print("\n")
+        i=i+1
+    numt=-1
+    while(numt<0 or numt>=atasks_.__len__()):
+          #print("������� ��� ������")
+          #HelpFunctions.CPrintRusWord(int(3))
+          #HelpFunctions.CPrint("\n")
+          print("Введите код задачи\n")
+          #numt=HelpFunctions.CGetInt()
+          numt=int(input())
+    return atasks_[numt]
+   
+n_task=task_manager_get_task()
+print("Введите строки для сортировки (строка -1 для завершения)\n")
+value=""
+str_=[]
+value=input()
+while(value!="-1"):
+    str_.append(value)
+    value=str(input())
+if(len(str_)>0):
+ if(n_task==1):
+    res=task_1(str_)
+ elif(n_task==5):
+    res=task_5(str_)
+ elif(n_task==9):
+    res=task_9(str_)
+ else:
+    res=task_10(str_)
+print(res)
+print("\n")
+    
 
-   
-   
