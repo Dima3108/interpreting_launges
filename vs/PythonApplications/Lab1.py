@@ -1,7 +1,7 @@
 import array
-import threading
+#import threading
 N = 12
-thread_count=2
+thread_count=1
 print(((N-1)%12)-1)
 #Вариан 10
 #Номер 1
@@ -54,15 +54,16 @@ def ND(x): #Наименьший делитель не равный 1
     #while val > 1 :
        
         #val=val-1
-    th1=threading.Thread(target=ND_thread,args=(0,x))
-    th1.start()
-    th2=threading.Thread(target=ND_thread,args=(1,x))
-    th2.start()
-    th1.join()
-    th2.join()
-    if (cesh_nd[0] < cesh_nd[1]) and (cesh_nd[0]>0) :
-        return cesh_nd[0]
-    return cesh_nd[1]
+    #th1=threading.Thread(target=ND_thread,args=(0,x))
+    #th1.start()
+    #th2=threading.Thread(target=ND_thread,args=(1,x))
+    #th2.start()
+    #th1.join()
+    #th2.join()
+    ND_thread(0,x)
+    #if (cesh_nd[0] < cesh_nd[1]) and (cesh_nd[0]>0) :
+    #    return cesh_nd[0]
+    return cesh_nd[0]
 def ChifSum(x): #Сумма цифр < 5
     sum =0
     tmp=x
@@ -90,24 +91,26 @@ def Proizv(x):
     max = -1
     
     nd= ND(x)
-    th1=threading.Thread(target=Proizv_thread,args=(0,x,nd))
-    th1.start()
-    th2=threading.Thread(target=Proizv_thread,args=(1,x,nd))
-    th2.start()
+    #th1=threading.Thread(target=Proizv_thread,args=(0,x,nd))
+    #th1.start()
+    #th2=threading.Thread(target=Proizv_thread,args=(1,x,nd))
+    #th2.start()
    
     
     #i=1
     #while i<x:
     #    
     #    i=i+1 
+    Proizv_thread(0,x,nd)
     sum=ChifSum(x)
-    th1.join()
-    th2.join()
+    #th1.join()
+    #th2.join()
     global cesh_th
-    if cesh_th[0]>cesh_th[1]:
-        res=cesh_th[0]
-    else :
-        res=cesh_th[1]
+    res=cesh_th[0]
+    #if cesh_th[0]>cesh_th[1]:
+    #    res=cesh_th[0]
+    #else :
+    #    res=cesh_th[1]
     return res*sum
 val=int(input())
 r=Proizv(val)
