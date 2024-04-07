@@ -1,46 +1,54 @@
-# coding=Latin-1
+# -*- coding: utf-8 -*-
 #https://habr.com/ru/articles/556230/
-#Компиляция в exe 
+#пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ exe 
 #https://habr.com/ru/companies/vdsina/articles/557316/
-#Вариант 10
+#пїЅпїЅпїЅпїЅпїЅпїЅпїЅ 10
 import array
 import locale,pprint,time,os
 import string
 #import array
 from xml.etree.ElementTree import tostring
 from xml.etree.ElementTree import tostring
-import clr
-pathDLL = os.getcwd() + "\\Debug\\netstandard2.0\\ForPython.dll"
-clr.AddReference(pathDLL)
+#import clr
+#pathDLL = os.getcwd() + "\\Debug\\netstandard2.0\\ForPython.dll"
+#clr.AddReference(pathDLL)
 #import ForPython
-from ForPython import HelpFunctions
-locale.setlocale(locale.LC_ALL, 'ru_RU.UTF-8')
+#from ForPython import HelpFunctions
+#locale.setlocale(locale.LC_ALL, 'ru_RU.UTF-8')
 #print(locale.getlocale(),"\n")
 s="###"
-HelpFunctions.CPrint(s)
-HelpFunctions.CPrint("\n")
+#HelpFunctions.CPrint(s)
+#HelpFunctions.CPrint("\n")
 atasks_=[4,11,15]
 def task_manager_get_task():
-   # print("Выберите задачу, которую хотите решить\n")
-    HelpFunctions.CPrintRusWord(int(0))
-    HelpFunctions.CPrint("\n")
+   # print("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\n")
+    #HelpFunctions.CPrintRusWord(int(0))
+    #HelpFunctions.CPrint("\n")
+    print("Р’С‹Р±РµСЂРёС‚Рµ Р·Р°РґР°С‡Сѓ, РєРѕС‚РѕСЂСѓСЋ С…РѕС‚РёС‚Рµ СЂРµС€РёС‚СЊ\n")
     global atasks_
     i=0
     while(i<atasks_.__len__()):
-        #print("у задачи ",atasks_[i]," код равен",i,"\n")
-        #sar=["у задачи ",atasks_[i]," код равен",i,"\n"]
-        HelpFunctions.CPrintRusWord(int(1))
-        HelpFunctions.CPrint(str(atasks_[i]))
-        HelpFunctions.CPrintRusWord(int(2))
-        HelpFunctions.CPrint(str(i))
-        HelpFunctions.CPrint("\n")
+        #print("пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ ",atasks_[i]," пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ",i,"\n")
+        #sar=["пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ ",atasks_[i]," пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ",i,"\n"]
+        #HelpFunctions.CPrintRusWord(int(1))
+        print("Сѓ Р·Р°РґР°С‡Рё ")
+        #HelpFunctions.CPrint(str(atasks_[i]))
+        print(atasks_[i])
+        #HelpFunctions.CPrintRusWord(int(2))
+        print(" РєРѕРґ СЂР°РІРµРЅ")
+        #HelpFunctions.CPrint(str(i))
+        #HelpFunctions.CPrint("\n")
+        print(i)
+        print("\n")
         i=i+1
     numt=-1
     while(numt<0 or numt>=atasks_.__len__()):
-          #print("Введите код задачи")
-          HelpFunctions.CPrintRusWord(int(3))
-          HelpFunctions.CPrint("\n")
-          numt=HelpFunctions.CGetInt()
+          #print("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ")
+          #HelpFunctions.CPrintRusWord(int(3))
+          #HelpFunctions.CPrint("\n")
+          print("Р’РІРµРґРёС‚Рµ РєРѕРґ Р·Р°РґР°С‡Рё\n")
+          #numt=HelpFunctions.CGetInt()
+          numt=int(input())
     return atasks_[numt]
 
 def task_4(str):
@@ -60,8 +68,8 @@ def task_15(str):
             count = count + 1
         i = i + 1
     return count
-def task_11(st:string):
-    #дана строка , посчитать незадествованные символы латиницы
+def task_11(st):
+    #пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ , пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     str2=st.lower()
     cesh_str=""
     i=0
@@ -101,21 +109,38 @@ def task_11(st:string):
     return count
 _task=task_manager_get_task()
 if(_task==4):
-   HelpFunctions.CPrintRusWord(int(9))
-   _str=str(HelpFunctions.GGetString())
+   #HelpFunctions.CPrintRusWord(int(9))
+   print("Р”Р°РЅР° СЃС‚СЂРѕРєР°. РќРµРѕР±С…РѕРґРёРјРѕ РїРѕРґСЃС‡РёС‚Р°С‚СЊ" +
+                                                   " РєРѕР»РёС‡РµСЃС‚РІРѕ С‡РёСЃРµР» РІ СЌС‚РѕР№ СЃС‚СЂРѕРєРµ," +
+                                                   " \r\nР·РЅР°С‡РµРЅРёРµ РєРѕС‚РѕСЂС‹С… РјРµРЅСЊС€Рµ 5\n")
+   #_str=str(HelpFunctions.GGetString())
+   _str=input()
    _stat=task_4(_str)
-   HelpFunctions.CPrint(int(_stat))
+   #HelpFunctions.CPrint(int(_stat))
+   print(_stat)
+   print("\n")
   # if(_stat==True):
   #     HelpFunctions.CPrintRusWord(int(5))
   # else:
   #     HelpFunctions.CPrintRusWord(int(6))
 elif (_task==11):
-     HelpFunctions.CPrintRusWord(int(10))
-     _str=str(HelpFunctions.GGetString())
+     #HelpFunctions.CPrintRusWord(int(10))
+     print(" Р”Р°РЅР° СЃС‚СЂРѕРєР°. РќРµРѕР±С…РѕРґРёРјРѕ РЅР°Р№С‚Рё РІСЃРµ " +
+                                                   " РЅРµР·Р°РґРµР№СЃС‚РІРѕРІР°РЅРЅС‹Рµ СЃРёРјРІРѕР»С‹ " +
+                                                   "\r\nР»Р°С‚РёРЅРёС†С‹ РІ СЌС‚РѕР№ СЃС‚СЂРѕРєРµ.\r\n")
+     #_str=str(HelpFunctions.GGetString())
+     _str=str(input())
      _stat=task_11(_str)
-     HelpFunctions.CPrint(int(_stat))
+     #HelpFunctions.CPrint(int(_stat))
+     print(_stat)
+     print("\n")
 else:
-    HelpFunctions.CPrintRusWord(int(11))
-    _count= task_15(tostring(HelpFunctions.GGetString()))
-    HelpFunctions.CPrint(int(_count))
-HelpFunctions.Exit()  
+    #HelpFunctions.CPrintRusWord(int(11))
+    print("Р”Р°РЅР° СЃС‚СЂРѕРєР°. РќРµРѕР±С…РѕРґРёРјРѕ РїРѕРґСЃС‡РёС‚Р°С‚СЊ" +
+                                                   " РєРѕР»РёС‡РµСЃС‚РІРѕ С†РёС„СЂ РІ СЌС‚РѕР№ СЃС‚СЂРѕРєРµ," +
+                                                   " \r\nР·РЅР°С‡РµРЅРёРµ РєРѕС‚РѕСЂС‹С… Р±РѕР»СЊС€Рµ 5\n")
+    #_count= task_15(tostring(HelpFunctions.GGetString()))
+    _count=task_15(str(input()))
+    #HelpFunctions.CPrint(int(_count))
+    print(_count)
+#HelpFunctions.Exit()  
