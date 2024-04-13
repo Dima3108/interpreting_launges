@@ -7,14 +7,17 @@ namespace Lab1
     {
         static void Main(string[] args)
         {
-            string inp_w = File.ReadAllText("ОжеговСИ.txt");
-            char letter = (Console.ReadLine())[0];
-            var res = Lab4_task2.TextScanner(inp_w, letter);
-            foreach (var line in res)
+            string f = "123 asdfgiiIIII  34 февраля 2021 года , 11 мая,   ________________" +
+                "\n\n 2 Мая 1998-го года ,,,,,,,,,,," +
+                "ууууууууууууууууrrrrYYYYYY11 июня 2011////" +
+                "09 июня 2001 года, 11 Апрелят 2000 ------" +
+                "111августа 2022 , ЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮ" +
+                "-1 сентября 2011 года";
+            var r=Lab1_task5_shared.Scan(f);
+            foreach(string s in r)
             {
-                Console.WriteLine(line);
+                Console.WriteLine(s);
             }
-            Console.WriteLine(res.Length);
         }
     }
 }
