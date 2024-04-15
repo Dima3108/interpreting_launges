@@ -114,6 +114,8 @@ urls = [
 ]
 
 for url in urls:
+    print(url)
+    print("\n")
     print(checking_string_validity(url))
     try:
         print(get_domain(url))
