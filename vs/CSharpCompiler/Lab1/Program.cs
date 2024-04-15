@@ -7,16 +7,29 @@ namespace Lab1
     {
         static void Main(string[] args)
         {
-            string f = "123 asdfgiiIIII  34 февраля 2021 года , 11 мая,   ________________" +
-                "\n\n 2 Мая 1998-го года ,,,,,,,,,,," +
-                "ууууууууууууууууrrrrYYYYYY11 июня 2011////" +
-                "09 июня 2001 года, 11 Апрелят 2000 ------" +
-                "111августа 2022 , ЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮЮ" +
-                "-1 сентября 2011 года";
-            var r=Lab1_task5_shared.Scan(f);
-            foreach(string s in r)
+            string[] urls =
             {
-                Console.WriteLine(s);
+                "https://www.google.com/search?q=base64+code+table&oq=base64+code+ta&gs_lcrp=EgZjaHJvbWUqBwgBEAAYgAQyBggAEEUYOTIHCAEQABiABDIKCAIQABiABBiiBDIKCAMQABiABBiiBDIKCAQQABiABBiiBDIKCAUQABiABBiiBDIKCAYQABiABBiiBNIBCjIyNjU1ajBqMTWoAgiwAgE&sourceid=chrome&ie=UTF-8",
+                "http://example.com/",
+                "example.com",
+                "погода.ру",
+                "http://qwert.@@@@/g.ru",
+                "https://www.dns-shop.ru/",
+                "https://www.dns-shop.ru/catalog/17a89a0416404e77/materinskie-platy/?stock=now-today-tomorrow-later&f[rv2z]=13iyb1&f[uq]=lxihi",
+                "https://dotnet.microsoft.comen-us/apps/aspnet",
+                "https://learn.microsoft.com/en-us/aspnet/core/blazor/security/?view=aspnetcore-8.0&WT.mc_id=dotnet-35129-website"
+            };
+            for(int i=0;i< urls.Length; i++)
+            {
+                Console.WriteLine(Lab5.checking_string_validity(urls[i]));
+                try
+                {
+                   Console.WriteLine(Lab5.get_domain(urls[i]));
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"error:{e.Message}");
+                }
             }
         }
     }
