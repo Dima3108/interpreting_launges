@@ -3,33 +3,26 @@
 import random
 atasks_=[10,22,34,46,58]
 def task_manager_get_task():
-   # print("�������� ������, ������� ������ ������\n")
-    #HelpFunctions.CPrintRusWord(int(0))
-    #HelpFunctions.CPrint("\n")
+   
     print("Выберите задачу, которую хотите решить\n")
     global atasks_
     i=0
     while(i<atasks_.__len__()):
-        #print("� ������ ",atasks_[i]," ��� �����",i,"\n")
-        #sar=["� ������ ",atasks_[i]," ��� �����",i,"\n"]
-        #HelpFunctions.CPrintRusWord(int(1))
+        
         print("у задачи ")
-        #HelpFunctions.CPrint(str(atasks_[i]))
+        
         print(atasks_[i])
-        #HelpFunctions.CPrintRusWord(int(2))
+        
         print(" код равен")
-        #HelpFunctions.CPrint(str(i))
-        #HelpFunctions.CPrint("\n")
+        
         print(i)
         print("\n")
         i=i+1
     numt=-1
     while(numt<0 or numt>=atasks_.__len__()):
-          #print("������� ��� ������")
-          #HelpFunctions.CPrintRusWord(int(3))
-          #HelpFunctions.CPrint("\n")
+          
           print("Введите код задачи\n")
-          #numt=HelpFunctions.CGetInt()
+          
           numt=int(input())
     return atasks_[numt]
 def task_10(array1,array2):
