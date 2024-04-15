@@ -20,6 +20,17 @@ namespace Lab1
             {
                 throw new Exception("Некорректное имя домена!");
             }
+            //http
+            char[] ch = url.ToLower().ToCharArray();
+            int strat_pos = 4;
+            if (ch[strat_pos] == 's')
+                strat_pos++;
+            strat_pos += 3;
+            dom = "";
+            while (ch[strat_pos]!='/')
+            {
+                dom += ch[strat_pos++].ToString();
+            }
             return dom;
         }
         private static bool checking_string_validity(string url,out string domain_)

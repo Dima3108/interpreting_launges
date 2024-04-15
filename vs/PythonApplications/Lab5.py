@@ -97,6 +97,19 @@ def get_domain(url):
         (res,_domain_)= checking_string_validity_(url,domain_=None)
         if(res!=True):
             raise Exception("Некорректное имя домена!")
+        
+
+        url = url.lower()
+        start_pos = 4
+        if url[start_pos] == 's':
+           start_pos += 1
+        start_pos += 3
+        domain = ""
+        while url[start_pos] != '/':
+              domain += url[start_pos]
+              start_pos += 1
+        _domain_=domain
+
         return _domain_
    
 
