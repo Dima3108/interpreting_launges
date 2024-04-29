@@ -22,18 +22,42 @@
     </header>
     <main>
        <div>
-        <strong>Авторы:</strong>
+        <strong>Виды:</strong>
         <div id="content"></div>
-        <script>
-             var xhr=new XMLHttpRequest();
-             xhr.open('GET','gettypes.py')
+        <script defer>
+             /*var xhr=new XMLHttpRequest();
+             xhr.open('GET','gettypes.py',async=true)
              xhr.onload=function(){
                  if(xhr.status==200){
                   var cont=document.getElementById("content");
                   cont.innerHTML=xhr.responseText;
                  }
              };
-             xhr.send();
+             xhr.send();*/
+        </script>
+       </div>
+       <div>
+        <strong>Авторы:</strong>
+        <div id="acontent"></div>
+        <script defer>
+            var xhr = new XMLHttpRequest();
+              xhr.open('GET', 'getauthors.py', async = true)
+              xhr.onload = function () {
+                if (xhr.status == 200) {
+                  var cont = document.getElementById("acontent");
+                  cont.innerHTML = xhr.responseText;
+                }
+              };
+              xhr.send();
+              var xhr2= new XMLHttpRequest();
+                xhr2.open('GET', 'gettypes.py', async = true)
+                xhr2.onload = function () {
+                  if (xhr2.status == 200) {
+                    var cont = document.getElementById("content");
+                    cont.innerHTML = xhr2.responseText;
+                  }
+                };
+                xhr2.send();
         </script>
        </div>
     </main>
