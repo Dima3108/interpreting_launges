@@ -75,4 +75,14 @@ if((cursor.fetchall()).__len__()<len(auth_id)):
     i=i+1  
   connection.commit()
 #Задание 4. Написать не менее трех статистических запросов (SELECT)
+#1 Запрос
+cursor.execute("SELECT * FROM iatp")
+array1_=cursor.fetchall()
+for elem in array1_:
+  print(elem)
+#2 запрос
+cursor.execute("SELECT authors.author,iatp.name,type_of_painting.type FROM iatp,type_of_painting,authors where authors.id=iatp.authorid and iatp.type=type_of_painting.id ")
+array2_=cursor.fetchall()
+print(array2_)
+
 connection.close()
