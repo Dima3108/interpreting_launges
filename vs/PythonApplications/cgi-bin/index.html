@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<body>
+  <head lang="ru" >
+    <meta charset="UTF-8">
+
+  </head>
+    <header>
+      
+      <div>
+        <div>Задание 6</div>
+        <div>
+            <a href="">Добавить автора</a>
+            
+        </div>
+        <div>
+            <a href="">Добавть тип картины</a>
+        </div>
+        <div>
+          <a href="">Добавить картину</a>
+        </div>
+      </div>
+    </header>
+    <main>
+       <div>
+        <strong>Авторы:</strong>
+        <div id="content"></div>
+        <script>
+             var xhr=new XMLHttpRequest();
+             xhr.open('GET','gettypes.py')
+             xhr.onload=function(){
+                 if(xhr.status==200){
+                  var cont=document.getElementById("content");
+                  cont.innerHTML=xhr.responseText;
+                 }
+             };
+             xhr.send();
+        </script>
+       </div>
+    </main>
+</body>

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-
-print("Content-type: text/html")
+# -*- coding: utf-8 -*-
+print("Content-type: text/html;Accept-Charset: utf-8")
 print()
-print("<h1>6 задача 6 лабораторной</h1>")
+file=open("cgi-bin\index.html","r")
+print(file.read())
