@@ -14,8 +14,8 @@ for elem in cursor.fetchall():
     s=s+str(elem)
     s=s+"\n</li>\n"
 s=s+"</ol>\n"
-en=base64.b64encode(s)
-print(en)
+#en=base64.b64encode(s)
+print(s)
 #print("<ol>")
 #for elem in cursor.fetchall():
     #print("<li>")

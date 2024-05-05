@@ -9,11 +9,11 @@
       <div>
         <div>Задание 6</div>
         <div>
-            <a href="">Добавить автора</a>
+            <a href="getsetauthor.py">Добавить автора</a>
             
         </div>
         <div>
-            <a href="">Добавть тип картины</a>
+            <a href="getsettype.py">Добавть тип картины</a>
         </div>
         <div>
           <a href="">Добавить картину</a>
@@ -39,7 +39,9 @@
        <div>
         <strong>Авторы:</strong>
         <div id="acontent"></div>
-        <script defer>
+        
+       </div>
+       <script defer>
             var xhr = new XMLHttpRequest();
               xhr.open('GET', 'getauthors.py', async = true)
               xhr.onload = function () {
@@ -59,6 +61,5 @@
                 };
                 xhr2.send();
         </script>
-       </div>
     </main>
 </body>
