@@ -29,8 +29,8 @@ CREATE TABLE IF NOT EXISTS iatp(
       type INTEGER,
       
       authorid INTEGER, 
-      FOREIGN KEY (type) REFERENCES type_of_painting(type) ,          
-      FOREIGN KEY (authorid)  REFERENCES authors(authorid)   
+      FOREIGN KEY (type) REFERENCES type_of_painting(id) ON DELETE CASCADE,          
+      FOREIGN KEY (authorid)  REFERENCES authors(id) ON DELETE CASCADE  
 )
 ''')
 #Задание 3. Заполнить таблицы БД информацией с помощью 

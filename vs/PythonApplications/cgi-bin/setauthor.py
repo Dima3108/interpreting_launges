@@ -1,17 +1,19 @@
 
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# -*- coding: cp-1251 -*-
+import base64
 import cgi
 import sqlite3
 form = cgi.FieldStorage()  
 connection = sqlite3.connect('painting_database.db')
-aname=str(form.getvalue('name'))
-print("Content-type: text/html;Accept-Charset: utf-8")
+aname=str( form.getvalue('name'))
+print("Content-type: text/html;")
+
 print('''
 <!DOCTYPE html>
 <html>
     <head lang="ru">
-        <meta charset="UTF-8">
+       <!-- <meta charset="UTF-8">-->
     
     </head>
     <header>
@@ -33,17 +35,19 @@ print('''
     <body>
 ''')
 cursor = connection.cursor()
-cursor.execute("select id from authors where authors.author={aname}")
+#cursor.execute("select id from authors where authors.author='%s'" %aname)
 stat_=-1
-for elem in cursor.fetchall():
-    stat_=1
+#for elem in cursor.fetchall():
+#    stat_=1
+stat_=1
 if(stat_==1):
-    print("указанный автор существует!")
+    print("указанный (%s)  автор существует!" %aname)
 else:
-    cursor.execute("insert into authors(author) VALUES({aname})")
-    print("указанный автор успешно добавлен")
+    cursor.execute("insert into authors(author) VALUES('%s')" %aname)
+    print("указанный (%s) автор успешно добавлен" %aname)
     connection.commit()
 print('''
+      <a href="index.py">На главную</a>
   </body>
 </html>
 ''')

@@ -24,42 +24,42 @@
        <div>
         <strong>Виды:</strong>
         <div id="content"></div>
-        <script defer>
-             /*var xhr=new XMLHttpRequest();
-             xhr.open('GET','gettypes.py',async=true)
-             xhr.onload=function(){
-                 if(xhr.status==200){
-                  var cont=document.getElementById("content");
-                  cont.innerHTML=xhr.responseText;
-                 }
-             };
-             xhr.send();*/
-        </script>
+        
        </div>
        <div>
         <strong>Авторы:</strong>
         <div id="acontent"></div>
-        
+        <div>
+          <strong>
+            Картины
+          </strong>
+          <div id="imcontent">
+
+          </div>
+        </div>
+        <div>
+          <table style="position: relative; display: flex; justify-content: center; text-align: center;">
+            <tr style="background-color:blueviolet; font-size:xx-large">
+                <th>
+                  1
+                </th>
+            </tr>
+            <tr style=" font-size: x-large;" class="trow">
+              <td>
+
+              </td>
+            </tr>
+          </table>
+          <style>
+            .trow {
+               font-size: x-large;
+               background-color: aquamarine;
+               text-align: center;
+               text-size-adjust: 12px;
+            }
+          </style>
+        </div>
        </div>
-       <script defer>
-            var xhr = new XMLHttpRequest();
-              xhr.open('GET', 'getauthors.py', async = true)
-              xhr.onload = function () {
-                if (xhr.status == 200) {
-                  var cont = document.getElementById("acontent");
-                  cont.innerHTML = xhr.responseText;
-                }
-              };
-              xhr.send();
-              var xhr2= new XMLHttpRequest();
-                xhr2.open('GET', 'gettypes.py', async = true)
-                xhr2.onload = function () {
-                  if (xhr2.status == 200) {
-                    var cont = document.getElementById("content");
-                    cont.innerHTML = xhr2.responseText;
-                  }
-                };
-                xhr2.send();
-        </script>
+      
     </main>
 </body>
