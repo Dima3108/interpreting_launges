@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-print("Content-type: text/html;Accept-Charset: utf-8")
+print("Content-type: text/html\n")
 print()
 #file=open("cgi-bin\setauthor.html","r")
 #print(file.read())
@@ -31,7 +31,7 @@ print('''
         <form method="post" action="setauthor.py">
               <label for="name">Введите автора</label>
               <input type="text" name="name">
-              <input type="submit">Отправить</button>
+              <button type="submit">Отправить</button>
         </form>
     </body>
 </html>

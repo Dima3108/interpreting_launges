@@ -1,0 +1,50 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="cp-1251" lang="ru">
+    </head>
+    <body>
+    <header>
+    
+        <div>
+            <div>Задание 6</div>
+            <div>
+                <a href="getsetauthor.py">Добавить автора</a>
+    
+            </div>
+            <div>
+                <a href="getsettype.py">Добавть тип картины</a>
+            </div>
+            <div>
+                <a href="getsetpaint.py">Добавить картину</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <form method="post" action="setpaint.py">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>1</th>
+                    
+                </tr>
+                <tr>
+                    <td>
+            <label for="pname">Название картины:</label>
+             <input type="text" name="pname">
+            </td>
+            <td>
+             <select name="p">
+                <option value="1">?</option>
+                <option value="2">@</option>
+                <option value="3">!</option>
+             </select>
+            </td>
+            </tr>
+             <button type="submit">Отправить</button>
+            
+      </table>  
+    </form>
+    </main>
+    </body>
+</html>

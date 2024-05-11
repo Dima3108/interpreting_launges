@@ -24,7 +24,7 @@ print('''
             <a href="getsettype.py">Добавть тип картины</a>
         </div>
         <div>
-          <a href="">Добавить картину</a>
+          <a href="getsetpaint.py">Добавить картину</a>
         </div>
       </div>
     </header>

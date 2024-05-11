@@ -1,11 +1,14 @@
-
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import cgi
 import sqlite3
 form = cgi.FieldStorage()  
 connection = sqlite3.connect('painting_database.db')
-aname=str(form.getvalue('type'))
+#form = cgi.FieldStorage()  
+#connection = sqlite3.connect('painting_database.db')
+paintname=str(form.getvalue("pname"))
+painttypeid=str(form.getvalue("typeid"))
+paintauthorid=str(form.getvalue("authorid"))
 print("Content-type: text/html;Accept-Charset: utf-8")
 print('''
 <!DOCTYPE html>
@@ -33,15 +36,15 @@ print('''
     <body>
 ''')
 cursor = connection.cursor()
-cursor.execute("select id from type_of_painting where type_of_painting.type='%s'" %aname)
+cursor.execute("select * from iatp where iatp.name='%s' and iatp.authorid = '%s' and iatp.type = '%s'" %(paintname,paintauthorid,painttypeid))
 stat_=-1
 for elem in cursor.fetchall():
     stat_=1
 if(stat_==1):
-    print("указанный тип (%s) существует!" %aname)
+    print("указанный тип (%s:%s:%s) существует!" %(paintname,paintauthorid,painttypeid))
 else:
-    cursor.execute("insert into type_of_painting(type) VALUES('%s')" %aname)
-    print("указанный тип (%s) успешно добавлен" %aname)
+    cursor.execute("insert into iatp(name,type,authorid) VALUES('%s','%s','%s')" %(paintname,paintauthorid,painttypeid))
+    print("указанный тип (%s:%s:%s) успешно добавлен" %(paintname,paintauthorid,painttypeid))
     connection.commit()
 print('''
        <a href="index.py">На главную</a>

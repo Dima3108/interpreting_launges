@@ -28,18 +28,18 @@ print('''
                 <a href="getsettype.py">Добавть тип картины</a>
             </div>
             <div>
-                <a href="">Добавить картину</a>
+                <a href="getsetpaint.py">Добавить картину</a>
             </div>
         </div>
     </header>
     <body>
 ''')
 cursor = connection.cursor()
-#cursor.execute("select id from authors where authors.author='%s'" %aname)
+cursor.execute("select id from authors where authors.author='%s'" %aname)
 stat_=-1
-#for elem in cursor.fetchall():
-#    stat_=1
-stat_=1
+for elem in cursor.fetchall():
+    stat_=1
+#stat_=1
 if(stat_==1):
     print("указанный (%s)  автор существует!" %aname)
 else:
